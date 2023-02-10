@@ -1,0 +1,15 @@
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="container" style="max-width:800px">
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">{{book.title}}</h1>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Genre: {{book.genre}}</small>
+                <small class="text-muted">ISBN: {{book.isbn}}</small>
+                <small class="text-muted">views: {{book.count}}</small>
+                <small class="text-muted">Time: {{time}}</small>
+            </div>            
+        </div>
+        <a href="{% url 'bookstore:update-book' book.slug %}"><button class="btn btn-primary">Edit -- {{book.title}}</button></a>
+    </div>
+    {% endblock %}
